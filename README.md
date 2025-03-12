@@ -1,3 +1,64 @@
+# Volatility 3 - Cheatsheet & Instalasi Tools
+
+## 📌 Tentang Proyek Ini
+Repository ini berisi **script otomatis** untuk menginstal **Volatility 3** di Linux serta **cheatsheet** untuk penggunaannya. Volatility 3 adalah framework open-source untuk **analisis memori forensik**, berguna dalam investigasi digital dan keamanan siber.
+
+## 🚀 Cara Instalasi
+Ikuti langkah-langkah berikut untuk menginstal **Volatility 3** menggunakan script otomatis:
+
+### **1. Clone Repository**
+```sh
+git clone git@github.com:zfernm/Volatility-3-Cheatsheet-Instalasi-Tools.git
+```
+
+### **2. Masuk ke Direktori**
+```sh
+cd Volatility-3-Cheatsheet-Instalasi-Tools
+```
+
+### **3. Beri Izin Eksekusi untuk Script**
+```sh
+chmod +x install_volatility.sh
+```
+
+### **4. Jalankan Script Instalasi**
+```sh
+./install_volatility.sh
+```
+
+## ✅ Fitur Script
+- Menginstal **Volatility 3** secara otomatis
+- Mengatur **virtual environment** untuk Python
+- Menambahkan **Volatility 3 ke PATH** agar bisa dipanggil dari mana saja
+- **Mengecek & menginstal dependensi** seperti `python3`, `pip`, dan `git`
+- Menampilkan **logo & informasi pemasangan**
+
+## 📖 Cara Menggunakan Volatility 3
+Setelah instalasi selesai, gunakan perintah berikut untuk mengecek apakah Volatility 3 telah terinstal dengan benar:
+```sh
+vol.py -h
+```
+Untuk menganalisis file dump memori:
+```sh
+vol.py -f memory_dump.raw windows.info
+```
+
+## 🛠 Dependencies
+Script ini secara otomatis menginstal dependensi berikut:
+- `python3`
+- `python3-venv`
+- `python3-pip`
+- `git`
+
+## ⚡ Kontributor
+- **ZFERNM X META4SEC**
+- **Samuel Hamonangan**
+
+Jika Anda ingin berkontribusi, silakan buat **Pull Request** atau hubungi kami! 🚀
+
+
+
+
 **Volatility 3 Cheatsheet** yang berisi perintah-perintah umum untuk membantu kamu menganalisis file memori dengan cepat.
 
 ---
