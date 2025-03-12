@@ -50,12 +50,7 @@ Script ini secara otomatis menginstal dependensi berikut:
 - `python3-pip`
 - `git`
 
-## ⚡ Kontributor
-- **ZFERNM X META4SEC**
-- **Samuel Hamonangan**
-
-Jika Anda ingin berkontribusi, silakan buat **Pull Request** atau hubungi kami! 🚀
-
+---
 
 
 
