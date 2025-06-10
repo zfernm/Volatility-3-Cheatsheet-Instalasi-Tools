@@ -13,7 +13,7 @@ SUCCESS="${GREEN}[ SUCCESS ]"
 logo() {
     echo -e "${RED}"
     echo " ######################################################### "
-    echo " #                INSTALL TOOLS VOLATILITY3              # " 
+    echo " #                INSTALL TOOLS VOLATILITY3              # "
     echo " ######################################################### "
     echo " ███████ ███████ ███████ ██████  ███    ██ ███    ███ "
     echo "     ███ ██      ██      ██   ██ ████   ██ ████  ████ "
@@ -30,7 +30,7 @@ install_dependencies() {
     sudo apt update -y
 
     echo -e "${PROSES} Installing dependencies..."
-    sudo apt install -y python3 python3-venv python3-pip git 
+    sudo apt install -y python3 python3-venv python3-pip git
 
     echo -e "${SUCCESS} Dependencies installed!"
 }
@@ -52,11 +52,15 @@ install_volatility() {
     echo -e "${PROSES} Deactivating virtual environment..."
     deactivate
 
-    echo -e "${PROSES} Adding Volatility 3 to PATH..."
-    echo 'export PATH="$HOME/volatility3:$PATH"' >> ~/.bashrc
-    source ~/.bashrc
+    echo -e "${PROSES} Creating wrapper executable: vol"
+    sudo tee /usr/local/bin/vol > /dev/null <<EOF
+#!/bin/bash
+$(pwd)/venv/bin/python3 $(pwd)/vol.py "\$@"
+EOF
 
-    echo -e "${SUCCESS} Volatility 3 installation completed!"
+    sudo chmod +x /usr/local/bin/vol
+
+    echo -e "${SUCCESS} Volatility 3 installed and command 'vol' is ready to use from anywhere!"
 }
 
 logo
@@ -64,4 +68,4 @@ install_dependencies
 install_volatility
 
 echo -e "${GREEN} Installation complete. You can now run Volatility 3 with:${RESET}"
-echo -e "${BLUE}vol.py -h${RESET}"
+echo -e "${BLUE}vol -h${RESET}"
